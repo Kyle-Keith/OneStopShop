@@ -4,11 +4,11 @@
 debug=1
 HOME="$PWD"
 DOMAIN="thing.local"
-INSTALL_USER="xadministrator"
-PASSWORD="P@ssw0rd!@"
+INSTALL_USER="administrator"
+PASSWORD="Password"
 soar_package="splunk_soar-unpriv-6.2.1.305-7c40b403-el7-x86_64.tgz"
 install_dir="/opt"
-GITLAB_USERNAME="kyle.keith"
+GITLAB_USERNAME="user"
 
 
 # Log files
@@ -55,12 +55,11 @@ declare -A images=(
     [squidfunk]="squidfunk/mkdocs-material"
 )
 
-# Confluence Gitlab repositories to download
+# Gitlab repositories to download
 declare -A gitlab=(
     [SOPs]="SOPs"
     [OneStopShop]="One-Stop-Shop"
 )
-#r2d2-kzW5nZUvbAjFjCC583gY
 ############################ Suppoorting Functions ####################################
 
 install_supporting_tools() {
@@ -420,7 +419,7 @@ EOF
 ############################ Install Functions ####################################
 
 install_offline_tools() {
-    if [ "${r2d2_answer,,}" = 'y' ]; then
+    if [ "${answer,,}" = 'y' ]; then
         clone_gitlab_projects
     fi
 
@@ -1395,9 +1394,9 @@ function onestopshop() {
         fi
     done
 
-    echo "Are you planning on downloading projects from R2D2?"
+    echo "Are you planning on downloading projects from Gitlab?"
     echo "This requires username and personal access token"
-    read -p "(y/n):" r2d2_answer
+    read -p "(y/n):" answer
 
     echo "Do you want to replace the default password?"
     read -p "(y/n):" pass_answer
