@@ -3,13 +3,13 @@
 # Global variables
 debug=1
 HOME="$PWD"
-DOMAIN="cpt.local"
+DOMAIN="thing.local"
 INSTALL_USER="xadministrator"
 PASSWORD="P@ssw0rd!@"
 soar_package="splunk_soar-unpriv-6.2.1.305-7c40b403-el7-x86_64.tgz"
 install_dir="/opt"
 GITLAB_USERNAME="kyle.keith"
-GITLAB_URL="https://code.levelup.cce.af.mil/651-cpt/"
+
 
 # Log files
 declare -A logs=(
