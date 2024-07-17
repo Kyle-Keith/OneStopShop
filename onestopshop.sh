@@ -57,7 +57,6 @@ declare -A images=(
 
 # Gitlab repositories to download
 declare -A gitlab=(
-    [SOPs]="SOPs"
     [OneStopShop]="One-Stop-Shop"
 )
 ############################ Suppoorting Functions ####################################
