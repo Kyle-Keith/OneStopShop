@@ -1,0 +1,10 @@
+version: "3.3"
+services:
+  mkdocs:
+    image: squidfunk/mkdocs-material
+    container_name: hunt_handbook
+    restart: unless-stopped
+    volumes:
+      - ./mkdocs:/docs
+    ports:
+      - 8000:8000

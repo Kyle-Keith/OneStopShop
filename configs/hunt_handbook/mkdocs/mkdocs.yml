@@ -1,0 +1,343 @@
+# mkdocs.yml
+site_name: Hunt Handbook
+theme:
+  name: material
+  logo: assets/steam_cup_logo.png
+  favicon: assets/steam_cup_favicon.png 
+  font:
+    code: Ubuntu
+  palette: 
+    # Palette toggle for light mode
+    - scheme: default
+      primary: deep purple
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: deep purple
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - content.code.annotate
+    - content.code.copy
+    - content.tabs.link
+    - header.autohide
+    - navigation.indexes
+    - navigation.instant # Has to be disabled for offline docs
+    - navigation.prune
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - toc.follow
+    - toc.integrate
+
+# Plugins
+plugins:
+  - offline
+  - search
+  # - pdf-export:
+  #     combined: true
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - meta
+  - pymdownx.betterem
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.keys
+  - pymdownx.highlight:
+      anchor_linenums: true
+      linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.mark
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format 
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - tables
+  - toc:
+      permalink: true
+
+# # Page tree
+nav:
+  - Home: index.md
+  - Setup:
+    - General: 1 - setup/2 - general_overview.md
+    - Planning: 
+      - 1 - setup/planning/index.md
+    - Hardware:
+      - SN3000 - Clear Disk: 1 - setup/hardware/clear_sn3000_disks.md
+      - SN3000 - Configuration: 1 - setup/hardware/sn3000_configuration.md
+      - SN7000 - Configuration: 1 - setup/hardware/sn7000_configuration.md
+      - SW2000 - Configuration: 1 - setup/hardware/sw2000_configuration.md
+      - Aggregator: 1 - setup/hardware/aggragator_cli.md
+      - Cisco CS3560CX: 1 - setup/hardware/cisco_c3560cx.md
+      - PaloAlto: 1 - setup/hardware/pa440_configuration.md
+      - ASF-21 Configuration: 1 - setup/hardware/asf21_configuration.md
+    - Infrastructure: 
+      - README: 1 - setup/infrastructure/README.md
+      - VMWare:
+        - README: 1 - setup/infrastructure/vmware/README.md
+        - ESXI Update: 1 - setup/infrastructure/vmware/vmware_esxi_update.md
+        - ESXI Backup: 1 - setup/infrastructure/vmware/vmware_esxi_backup.md   
+        - ESXI Virtual Networking: 1 - setup/infrastructure/vmware/vmware_esxi_virtual_networking.md
+        - ESXI Install: 1 - setup/infrastructure/vmware/vmware_esxi_install.md  
+        - VCSA Update: 1 - setup/infrastructure/vmware/vmware_vcsa_update.md
+        - ESXI Restore: 1 - setup/infrastructure/vmware/vmware_esxi_restore.md
+      - PFSense:
+        - README: 1 - setup/infrastructure/pfsense/README.md
+        - Pfsense - Install: 1 - setup/infrastructure/pfsense/pfsense.md
+        - Opnsense - Install: 1 - setup/infrastructure/pfsense/opnsense.md
+      - ACAS:
+        - README: 1 - setup/infrastructure/acas/README.md
+        - Build: 1 - setup/infrastructure/acas/acas_build.md
+        - Nessus Install: 1 - setup/infrastructure/acas/acas_tenable_nessus_install.md
+        - SecurityCenter Install: 1 - setup/infrastructure/acas/acas_tenable_securitycenter_install.md
+        - SecurityCenter License Request: 1 - setup/infrastructure/acas/acas_tenable_securitycenter_lic_request.md
+        - Build From ISO: 1 - setup/infrastructure/acas/build_from_iso.md
+        - Export Vulnerability Scan: 1 - setup/infrastructure/acas/export_vulnerability_scan.md
+        - Import Vulnerability Scan: 1 - setup/infrastructure/acas/import_vulnerability_scans.md
+      - Autopsy:
+        - Install Autopsy: 1 - setup/infrastructure/autopsy/install_autopsy.md
+      - Carbon Black:
+        - Carbon Black Install: 1 - setup/infrastructure/carbon_black/install_carbon_black.md
+      - Cisco:
+        - README: 1 - setup/infrastructure/cisco/README.md
+        - ASA ASDM: 1 - setup/infrastructure/cisco/cisco_asa_asdm.md
+        - ASA Routing Config: 1 - setup/infrastructure/cisco/cisco_asa_routing_config.md
+        - ASA Basic CLI: 1 - setup/infrastructure/cisco/cisco_asa_basic_cli.md   
+        - Catalyst Basic CLI: 1 - setup/infrastructure/cisco/cisco_catalyst_basic_cli.md
+        - ASA BVI config: 1 - setup/infrastructure/cisco/cisco_asa_bvi_config.md 
+        - Catalyst Initial Config: 1 - setup/infrastructure/cisco/cisco_catalyst_initial_config.md
+        - ASA Interface Config: 1 - setup/infrastructure/cisco/cisco_asa_interface_config.md
+        - Catalyst Routing Config: 1 - setup/infrastructure/cisco/cisco_catalyst_routing_config.md
+        - ASA Initial Config: 1 - setup/infrastructure/cisco/cisco_asa_intial_config.md
+        - IOS Update: 1 - setup/infrastructure/cisco/cisco_ios_update.md
+        - ASA Object NAT Dynamic Pat Config: 1 - setup/infrastructure/cisco/cisco_asa_obj_nat_dyn_pat_config.md 
+        - ASA Object NAT Static PAT Config: 1 - setup/infrastructure/cisco/cisco_asa_obj_nat_static_config.md
+      - Fireeye:
+        - README: 1 - setup/infrastructure/fireeye/README.md
+        - Initial Config: 1 - setup/infrastructure/fireeye/fireeye_hx_initial_config.md
+        - Agent Config: 1 - setup/infrastructure/fireeye/fireeye_hx_agent_config.md
+        - Agent Update: 1 - setup/infrastructure/fireeye/fireeye_hx_agent_update.md
+        - Splunk Integration: 1 - setup/infrastructure/fireeye/fireeye_hx_splunk_integration.md
+        - Appliance Update: 1 - setup/infrastructure/fireeye/fireeye_hx_appliance_update.md
+        - Tool Install Config: 1 - setup/infrastructure/fireeye/fireeye_hx_tool_install_config.md
+        - Content Update: 1 - setup/infrastructure/fireeye/fireeye_hx_content_update.md
+      - Gigamon:
+        - README: 1 - setup/infrastructure/gigamon/README.md
+        - Initial Config: 1 - setup/infrastructure/gigamon/gigamon_gigavue_initial_config.md
+        - Routemaps Config: 1 - setup/infrastructure/gigamon/gigamon_gigavue_routemaps_config.md
+      - Hayabusa:
+         - README: 1 - setup/infrastructure/hayabusa/README.md
+      - Host OS Installs:
+        - README: 1 - setup/infrastructure/host_os_installs/README.md
+        - CentOS7 Install: 1 - setup/infrastructure/host_os_installs/centos7_install.md
+        - Oracle Linux 7 Install: 1 - setup/infrastructure/host_os_installs/oracle_linux7_install.md
+        - Windows 10 Install: 1 - setup/infrastructure/host_os_installs/windows10_install.md
+        - Ubuntu Install: 1 - setup/infrastructure/host_os_installs/install_ubuntu.md
+      - Miscellaneous:
+        - README: 1 - setup/infrastructure/miscellaneous/README.md
+        - Git Basic Usage: 1 - setup/infrastructure/miscellaneous/git_basic_usage.md
+        - Systmon Usage: 1 - setup/infrastructure/miscellaneous/sysmon_usage.md
+        - Windows WEF Config: 1 - setup/infrastructure/miscellaneous/windows_wef_config.md
+      - Netgear:
+        - README: 1 - setup/infrastructure/netgear/README.md
+        - ReadyNAS MS Setup: 1 - setup/infrastructure/netgear/netgear_readynas_ms_setup.md
+        - ReadyNAS SS Setup: 1 - setup/infrastructure/netgear/netgear_readynas_ss_setup.md
+      - Nextcloud:
+        - Install Nextcloud: 1 - setup/infrastructure/nextcloud/install_nextcloud.md
+      - palo_alto:
+        - README: 1 - setup/infrastructure/palo_alto/README.md
+        - ESXI Setup: 1 - setup/infrastructure/palo_alto/palo_alto_esxi_setup.md
+        - PANOS Update: 1 - setup/infrastructure/palo_alto/palo_alto_panos_update.md
+        - Interface Config: 1 - setup/infrastructure/palo_alto/palo_alto_interface_config.md
+        - Routing Config: 1 - setup/infrastructure/palo_alto/palo_alto_routing_config.md
+        - NAT Policy: 1 - setup/infrastructure/palo_alto/palo_alto_nat_policy.md
+      - Redseal:
+        - README: 1 - setup/infrastructure/redseal/README.md
+        - Model Issues: 1 - setup/infrastructure/redseal/redseal_model_issues.md
+        - Initial Config: 1 - setup/infrastructure/redseal/redseal_initial_config.md
+        - Network Groups: 1 - setup/infrastructure/redseal/redseal_network_groups.md
+        - Licensing: 1 - setup/infrastructure/redseal/redseal_licensing.md
+        - Upgrading: 1 - setup/infrastructure/redseal/redseal_upgrade.md
+      - Security Onion:
+        - README: 1 - setup/infrastructure/security_onion/README.md
+        - Notes: 1 - setup/infrastructure/security_onion/basic_notes.md
+        - Init: 1 - setup/infrastructure/security_onion/init.md
+        - Manager: 1 - setup/infrastructure/security_onion/install_so_manager.md
+        - Sensor3000 Install: 1 - setup/infrastructure/security_onion/install_so_sensor3000.md
+        - Import Node Config: 1 - setup/infrastructure/security_onion/security_onion24_import_node_config.md
+        - Grid Build: 1 - setup/infrastructure/security_onion/security_onion_grid_build.md
+        - Import Node Config: 1 - setup/infrastructure/security_onion/security_onion_import_node_config.md
+        - Manger Node Config: 1 - setup/infrastructure/security_onion/security_onion_manager_node_config.md
+        - Minirax Install: 1 - setup/infrastructure/security_onion/security_onion_minirax_install.md
+        - Sensor Node Config: 1 - setup/infrastructure/security_onion/security_onion_sensor_node_config.md
+        - Splunk UF Config: 1 - setup/infrastructure/security_onion/security_onion_splunk_uf_config.md
+        - Tuning: 1 - setup/infrastructure/security_onion/security_onion_tuning.md
+        - Useful CLI Commands: 1 - setup/infrastructure/security_onion/security_onion_useful_cli.md
+        - VM Install: 1 - setup/infrastructure/security_onion/security_onion_vm_install.md
+        - Example Tuning:
+          - Global: 1 - setup/infrastructure/security_onion/example_tuning/global.md
+          - README: 1 - setup/infrastructure/security_onion/example_tuning/README.md
+          - Manager: 1 - setup/infrastructure/security_onion/example_tuning/so_manager.md
+          - Sensor1: 1 - setup/infrastructure/security_onion/example_tuning/so_sensor1.md
+          - Sensor2: 1 - setup/infrastructure/security_onion/example_tuning/so_sensor2.md
+          - Search1: 1 - setup/infrastructure/security_onion/example_tuning/so_search1.md
+          - Search2: 1 - setup/infrastructure/security_onion/example_tuning/so_search2.md
+          - Search3: 1 - setup/infrastructure/security_onion/example_tuning/so_search3.md
+      - Splunk:
+        - Using Splunk Enterprise: 1 - setup/infrastructure/splunk/start_using_splunk_enterprise.md
+    - Services:
+      - LDAP - Configuration: 1 - setup/services_configurations/ldap_config.md
+      - LDAP - Nextcloud: 1 - setup/services_configurations/ldap_nextcloud.md
+      - LDAP - Rocketchat: 1 - setup/services_configurations/ldap_rocketchat.md
+      - LDAP - Splunk: 1 - setup/services_configurations/ldap_splunk.md
+      - LDAP - TheHive: 1 - setup/services_configurations/ldap_thehive.md
+      - LDAP - VCSA: 1 - setup/services_configurations/ldap_vcsa.md
+      - Splunk - Apps: 1 - setup/services_configurations/splunk_apps.md
+      - Splunk - Deployment Apps: 1 - setup/services_configurations/splunk_deployment_apps.md
+      - Splunk - Zeek workbench: 1 - setup/services_configurations/configure_zeek_workbench.md
+      - TheHive Taxonomies: 1 - setup/services_configurations/hive_taxonomies.md
+      - Zeek Scripts: 1 - setup/services_configurations/zeek_scripts.md
+    - Laptops:
+      - Basic Settings: 1 - setup/laptops/basic_settings.md
+      - Bitlocker: 1 - setup/laptops/bitlocker.md
+      - Registry Settings: 1 - setup/laptops/registry_settings.md
+    - Advanced Configurations:
+      - VMWare:
+        - VM Content Libraries: 1 - setup/advanced_configurations/vm_content_libraries.md
+        - VM Migrating VMs: 1 - setup/advanced_configurations/vm_migrating_vms.md
+        - VM Settings up VDS: 1 - setup/advanced_configurations/vm_setting_up_vds.md
+        - VM VPG Promiscuous: 1 - setup/advanced_configurations/vm_vpg_promiscuous.md
+      - Security Onion:
+        - Basic Notes: 1 - setup/security_onion/basic_notes.md
+        - Filebeat Removal: 1 - setup/security_onion/init.md
+        - Example Tuning: 
+          - 1 - setup/security_onion/example_tuning/README.md
+          - Global SLS: 1 - setup/security_onion/example_tuning/global.md
+          - SO Manager SLS: 1 - setup/security_onion/example_tuning/so_manager.md
+          - SO Search1 SLS: 1 - setup/security_onion/example_tuning/so_search1.md
+          - SO Search2 SLS: 1 - setup/security_onion/example_tuning/so_search2.md
+          - SO Search3 SLS: 1 - setup/security_onion/example_tuning/so_search3.md
+          - SO Sensor1 SLS: 1 - setup/security_onion/example_tuning/so_sensor1.md
+          - SO Sensor2 SLS: 1 - setup/security_onion/example_tuning/so_sensor2.md
+        - Extra Configurations:
+          - Wireguard Configuration: 1 - setup/z - extra_configurations/wireguard_configuration.md
+  - Network Hunting: 
+    - 2 - network/index.md
+    - Methodology:
+      - Methodology Overview: 2 - network/01 - methodology/a - overview.md
+      - Methodology Objectives: 2 - network/01 - methodology/b - objectives.md
+      - Methodology Examples: 2 - network/01 - methodology/c - examples.md
+      - Methodology Example Questions: 2 - network/01 - methodology/d - examples questions.md
+    - Certificates:
+      - Suspicious Certificates: 2 - network/02 - certificates/suspicious_certs.md
+    - Connections:
+      - After Working Hours: 2 - network/03 - connections/after_working_hours.md
+      - High Ports: 2 - network/03 - connections/high_ports.md
+      - Internet Scanners: 2 - network/03 - connections/internet_scanners.md
+    - DNS:
+      - DNS to External: 2 - network/04 - dns/dns_to_external.md
+      - DNS TXT Records: 2 - network/04 - dns/dns_txt_records.md
+      - High Entropy Domains: 2 - network/04 - dns/high_entropy_domains.md
+      - Top Level Domains: 2 - network/04 - dns/top_level_domains.md
+    - Files:
+      - Single Character Filenames: 2 - network/05 - files/single_character_filenames.md
+      - Split Filenames: 2 - network/05 - files/split-files.md
+    - HTTP: 
+      - Administrator Web Browsing: 2 - network/06 - http/administrator_web_browsing.md
+      - Browsing from critical infrastructure: 2 - network/06 - http/browsing_from_critical_infrastructure.md
+      - Cleartext Passwords: 2 - network/06 - http/cleartext_passwords.md
+      - Exploitive Strings: 2 - network/06 - http/exploitive_strings.md
+      - Basic HTTP: 2 - network/06 - http/http.md
+      - HTTP Methods: 2 - network/06 - http/http_methods.md
+      - HTTP Proxy: 2 - network/06 - http/http_proxy.md
+      - Inappropriate Browsing: 2 - network/06 - http/inappropriate_browsing.md
+      - Useragents: 2 - network/06 - http/useragents.md
+    - Kerberos:
+      - Domain Controllers: 2 - network/07 - kerberos/domain_controllers.md
+    - SMB:
+      - Locating File Servers: 2 - network/08 - smb/locating_file_servers.md
+      - Profiling SMB: 2 - network/08 - smb/profiling_smb.md
+      - SMB Overview: 2 - network/08 - smb/smb_overview.md
+    - Software:
+      - Software General: 2 - network/09 - software/software_general.md
+    - SSH:
+      - Acceptable SSH: 2 - network/10 - ssh/acceptable_ssh_form.md
+      - External SSH: 2 - network/10 - ssh/external_ssh.md
+      - Internal SSH: 2 - network/10 - ssh/internal_ssh.md
+      - Long SSH Connections: 2 - network/10 - ssh/long_ssh_connections.md
+      - SSH Non-standard Ports: 2 - network/10 - ssh/ssh_non-standard_ports.md
+      - SSH Versions: 2 - network/10 - ssh/ssh_versions.md
+    - Extra Notes:
+      - Lead Generation Prompts:
+        - Protocols: 2 - network/lead generation prompts/protocols.md
+        - The List: 2 - network/lead generation prompts/the_list.md
+      - Sigma Converted Searches:
+        - First Seen Remote Pipe: 2 - network/simga converted/first_seen_remote_pipe.md
+        - Mitre BZAR: 2 - network/simga converted/mitre_bzar.md
+        - Print Nightmare: 2 - network/simga converted/print_nightmare.md
+        - Remote Task: 2 - network/simga converted/remote_task.md
+        - Secret Dump: 2 - network/simga converted/secret_dump.md
+        - Suspicious DNS: 2 - network/simga converted/suspicious_dns.md
+        - Suspicious Files: 2 - network/simga converted/suspicious_files.md
+        - Suspicious PSEXEC: 2 - network/simga converted/suspicious_psexec.md
+        - Transferring Files: 2 - network/simga converted/transferring_files.md
+        - DNS Z Flag: 2 - network/simga converted/z_flag.md
+  - Hosts Hunting:
+    - 3 - hosts/index.md
+    - Methods:
+      - Host Analyst Process: 3 - hosts/Methods/host_analyst_process_overview.md
+      - Collect Host Data: 3 - hosts/Methods/collect_host_data.md
+      - Analyze Host Data: 3 - hosts/Methods/030 Analyze Host Data.md
+      - Host Baseline Process: 3 - hosts/Methods/host_baseline_process.md
+      - Browser Activity: 3 - hosts/Methods/browser_activity.md
+      - Account Usage: 3 - hosts/Methods/account_usage.md
+      - Application Execution Discovery: 3 - hosts/Methods/application_execution_discovery.md
+      - Deleted Files Existence: 3 - hosts/Methods/deleted_files_existence.md
+      - External Devices and USB Usage: 3 - hosts/Methods/external_devices_usb_usage.md
+      - File and Directory Discovery: 3 - hosts/Methods/file_folder_opening.md
+      - Network Activity and Physical Location: 3 - hosts/Methods/network_activity.md
+      - System Information: 3 - hosts/Methods/system_information.md
+    - Tools:
+      - Assembly Line: 3 - hosts/Tools/Assembly_line.md
+      - Autopsy Usage: 3 - hosts/Tools/Autopsy_Usage.md
+      - FTKImager: 3 - hosts/Tools/FTKImager.md
+      - Magnet RESPONSE: 3 - hosts/Tools/MagnetRESPONSE.md
+      - MemProcFS: 3 - hosts/Tools/MemProcFs.md
+      - Velociraptor Key Commands: 3 - hosts/Tools/velociraptor_key_commands.md
+      - Velociraptor Setup: 3 - hosts/Tools/velociraptor_setup.md
+  - Learning Center:
+    - Command Line Help:
+      - Ansible Roles for Splunk: 4 - learning center/1 - command line/Ansible Roles for Splunk.md
+      - Quick Commands: 4 - learning center/1 - command line/Quick Commands.md
+      - JQ Primer: 4 - learning center/1 - command line/jq_primer.md
+    - Network Information:
+      - DNS Type Codes: 4 - learning center/2 - network/dns_type_codes.md
+      - Http Background: 4 - learning center/2 - network/http_background.md
+    - Hosts Information:
+      - Operation Tainted Love: 4 - learning center/3 - hosts/op-tainted-love.md
+      - Registry Locations: 4 - learning center/3 - hosts/registry-locations.md
+      - Windows Port Overview: 4 - learning center/3 - hosts/windows_port_overview.md
+      - Windows Event Reference: 4 - learning center/3 - hosts/windows_event_reference.md
+    - Command during Operations:
+      - Import SSH Keys: 4 - learning center/4 - operation/import_ssh_key.md

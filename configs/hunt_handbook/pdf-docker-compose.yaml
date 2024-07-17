@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  mkdocs:
+    image: pdf-mkdocs
+    container_name: pdf-mkdocs
+    restart: unless-stopped
+    volumes:
+      - ./mkdocs:/docs
+    # ports:
+    #   - 8000:8000
