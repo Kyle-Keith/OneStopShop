@@ -3,7 +3,7 @@
 # Global variables
 debug=1
 HOME="$PWD"
-DOMAIN="thing.local"
+DOMAIN="onestopshop.local"
 INSTALL_USER="administrator"
 PASSWORD="Password"
 soar_package="splunk_soar-unpriv-6.2.1.305-7c40b403-el7-x86_64.tgz"
